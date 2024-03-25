@@ -2,7 +2,7 @@
 
 This is a website hosted on GitHub Pages.
 
-[Visit Click Trainer Here(https://iheartgithub1234.github.io/click-trainer/)
+[Visit Click Trainer Here](https://iheartgithub1234.github.io/click-trainer/)
 
 ## About
 
