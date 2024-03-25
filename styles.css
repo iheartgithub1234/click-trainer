@@ -1,0 +1,417 @@
+@font-face {
+     font-family: BlackOpsOne;
+     src: url("assets/BlackOpsOne.ttf");
+}
+
+@font-face {
+     font-family: Tektur;
+     src: url("assets/Tektur.ttf");
+}
+
+@font-face {
+     font-family: Gugi;
+     src: url("assets/Gugi.ttf");
+}
+
+@property --gradient-angle {
+     syntax: "<angle>";
+     initial-value: 0deg;
+     inherits: false;
+}
+
+@keyframes rotation {
+     0% {
+          --gradient-angle: 0deg;
+     }
+
+     100% {
+          --gradient-angle: 360deg;
+     }
+}
+
+@keyframes grow {
+     0% {
+          transform: translate(-50%, -50%) scale(1);
+     }
+
+     50% {
+          transform: translate(-50%, -50%) scale(0.95);
+     }
+
+     100% {
+          transform: translate(-50%, -50%) scale(1);
+     }
+}
+
+@keyframes movingText {
+     0% {
+          left: -325px;
+     }
+
+     100% {
+          left: 0px;
+     }
+}
+
+@keyframes growAndRotate {
+     0% {
+          transform: translate(-50%, -50%) scale(1.05);
+     }
+
+     50% {
+          transform: translate(-50%, -50%) scale(0.93) rotate(-10deg);
+     }
+
+     100% {
+          transform: translate(-50%, -50%) scale(1.05);
+     }
+}
+
+@keyframes pulse {
+     0% {
+          transform: translate(-50%, -50%) scale(1);
+          opacity: 1;
+          filter: blur(0px);
+          background-color: lightblue;
+     }
+
+     100% {
+          transform: translate(-50%, -50%) scale(1.05);
+          opacity: 0.5;
+          filter: blur(8px);
+          background-color: blue;
+     }
+}
+
+.selected-button {
+     box-shadow: 0px 0px 7px 1px blue;
+     background-color: white;
+}
+
+.deselected-button {
+     border-width: 2px;
+     border-color: grey;
+     background-color: lightgrey;
+}
+
+body {
+     margin: 0;
+     overflow: hidden;
+     user-select: none;
+     transition: background-color 0.8s ease;
+}
+
+#circle {
+     border-radius: 50%;
+     display: none;
+     position: relative;
+}
+
+.homescreen-glow-container {
+     height: 915px;
+     width: 915px;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     background: linear-gradient(
+          var(--gradient-angle),
+          lightblue,
+          blue,
+          darkblue,
+          blue,
+          lightblue
+     );
+     animation: rotation 10s linear infinite, grow 5s infinite;
+     filter: blur(15px);
+}
+
+.homescreen-container {
+     background-color: white;
+     border: 5px;
+     border-style: solid;
+     border-color: black;
+     width: 900px;
+     height: 900px;
+     border-radius: 20px;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     animation: grow 5s infinite;
+}
+
+.homescreen-title {
+     position: absolute;
+     top: 5%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     color: rgb(210, 210, 210);
+     font-family: BlackOpsOne;
+     font-size: 70px;
+     text-wrap: nowrap;
+     -webkit-text-stroke-width: 3px;
+     -webkit-text-stroke-color: blue;
+     transition: color 0.8s ease, transform 0.5s ease;
+}
+
+.homescreen-title:hover {
+     transform: translate(-50%, -50%) scale(1.02);
+}
+
+.homescreen-pointer-image {
+     width: 220px;
+     height: 220px;
+     user-select: none;
+     -webkit-user-drag: none;
+     transition: transform 1s ease;
+     animation: growAndRotate 5s infinite;
+}
+
+.homescreen-pointer-image-container {
+     position: absolute;
+     top: 20%;
+     left: 108%;
+     transform: translate(-50%, -50%);
+     transition: transform 0.3s ease;
+}
+
+.homescreen-pointer-image-container:hover {
+     transform: translate(-50%, -50%) scale(1.03);
+}
+
+.homescreen-input {
+     position: absolute;
+     top: 26%;
+     left: 50%;
+     border: 1px solid grey;
+     border-radius: 10px;
+     transform: translate(-50%, -50%);
+     width: 300px;
+     height: 50px;
+     font-size: 35px;
+     letter-spacing: 3px;
+     caret-color: darkblue;
+     color: darkblue;
+     text-align: center;
+     transition: border 0.2s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.homescreen-input:hover {
+     border: 3px solid black;
+}
+
+.homescreen-input:focus {
+     box-shadow: 0px 0px  7px 1px blue;
+     transform: translate(-50%, -50%) scale(1.2);
+}
+
+.homescreen-input::placeholder {
+     text-align: center;
+     font-family: Tektur;
+     font-size: 30px;
+     font-style: italic;
+     color: lightgray;
+}
+
+.homescreen-input::-webkit-inner-spin-button {
+     appearance: none;
+}
+
+.homescreen-button-container {
+     width: 410px;
+     height: 210px;
+     position: absolute;
+     top: 48%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     display: grid;
+     grid-template-columns: auto auto;
+     gap: 10px;
+}
+
+.homescreen-button-container button {
+     width: 200px;
+     height: 100px;
+     background-color: lightgray;
+     border-radius: 15px;
+     cursor: pointer;
+     font-size: 26px;
+     font-family: Gugi;
+     transition: background-color 0.5s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.homescreen-button-container button:hover {
+     background-color: rgb(233, 233, 233);
+}
+
+.homescreen-button-container button:active {
+     background-color: white;
+     transform: scale(0.95);
+}
+
+.homescreen-checkbox-container {
+     position: absolute;
+     top: 55%;
+     left: 50%;
+     transform: translate(-50%, 50%);
+}
+
+.homescreen-checkbox-container div {
+     transition: transform 0.1s ease;
+}
+
+.homescreen-checkbox-container input[type="checkbox"] {
+     width: 50px;
+     height: 50px;
+     transition: box-shadow 0.3s;
+     cursor: pointer;
+     position: relative;
+     top: 15px;
+}
+
+.homescreen-checkbox-container label {
+     font-size: 30px;
+     font-family: Gugi;
+     font-weight: bold;
+     padding-left: 5px;
+     color: dimgray;
+     transition: color 0.2s, transform 0.1s ease;
+     cursor: pointer;
+     margin: 0;
+}
+
+.homescreen-sound-container:hover .homescreen-sound-checkbox {
+     box-shadow: 0px 0px 5px 2px blue;
+}
+
+.homescreen-sound-container:hover .homescreen-sound-label {
+     color: black;
+}
+
+.homescreen-drag-container:hover .homescreen-drag-checkbox {
+     box-shadow: 0px 0px 5px 2px blue;
+}
+
+.homescreen-drag-container:hover .homescreen-drag-label {
+     color: black;
+}
+
+.homescreen-fullscreen-container:hover .homescreen-fullscreen-checkbox {
+     box-shadow: 0px 0px 5px 2px blue;
+}
+
+.homescreen-fullscreen-container:hover .homescreen-fullscreen-label {
+     color: black;
+}
+
+.homescreen-start-container {
+     position: absolute;
+     top: 88%;
+     width: 900px;
+     height: 100px;
+     overflow: hidden;
+}
+
+.homescreen-start-text {
+     position: absolute;
+     text-wrap: nowrap;
+     font-family: Tektur;
+     font-size: 30px;
+     animation: movingText;
+     animation-duration: 8s;
+     animation-iteration-count: infinite;
+     animation-timing-function: linear;
+     transition: color 1s ease;
+}
+
+.homescreen-start-text:hover {
+     animation-play-state: paused;
+     color: blue;
+}
+
+.popup-glow-container {
+     width: 606px;
+     height: 406px;
+     border-radius: 30px;
+     position: absolute;
+     top: -230px;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     background-color: blue;
+     animation: pulse 1.5s infinite alternate;
+}
+
+.popup-container {
+     user-select: text;
+     border: 6px solid black;
+     border-radius: 30px;
+     position: absolute;
+     top: -230px;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     width: 600px;
+     height: 400px;
+     background-color: white;
+}
+
+.popup-title {
+     position: absolute;
+     top: 5%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     color: rgb(210, 210, 210);
+     font-family: BlackOpsOne;
+     font-size: 50px;
+     -webkit-text-stroke-width: 3px;
+     -webkit-text-stroke-color: blue;
+     transition: transform 0.5s ease;
+     user-select: none;
+}
+
+.popup-title:hover {
+     transform: translate(-50%, -50%) scale(1.05);
+}
+
+.popup-score-container {
+     position: absolute;
+     top: 48%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     text-align: center;
+}
+
+.popup-container p {
+     font-size: 26px;
+     font-family: Gugi;
+     margin-top: 1px;
+     margin-bottom: 1px;
+     user-select: all;
+     transition: transform 0.5s ease;
+}
+
+.popup-container p:hover {
+     transform: scale(1.08);
+}
+
+.popup-again-button {
+     position: absolute;
+     top: 85%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     user-select: none;
+     width: 150px;
+     height: 70px;
+     background-color: lightgray;
+     border-radius: 15px;
+     cursor: pointer;
+     font-size: 26px;
+     font-family: Tektur;
+     transition: background-color 0.5s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.popup-again-button:hover {
+     background-color: rgb(233, 233, 233);
+     transform: translate(-50%, -50%) scale(1.02);
+     box-shadow: 0px 0px 5px 2px blue;
+}

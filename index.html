@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+          <meta http-equiv="Strict-Transport-Security" content="max-age=31536000">
+          <link rel="icon" href="assets/favicon.png">
+          <title>Click Trainer</title>
+          <link rel="stylesheet" href="styles.css">
+          <script src="script.js" defer></script>
+     </head>
+     <body>
+          <div id="circle"></div>
+          <div id="homescreenGlowContainer" class="homescreen-glow-container"></div>
+          <div id="homescreenContainer" class="homescreen-container">
+               <h1 id="homescreenTitle" class="homescreen-title">Click Trainer</h1>
+               <div id="homescreenPointerImageContainer" class="homescreen-pointer-image-container">
+                    <img src="assets/pointer.png" id="homescreenPointerImage" class="homescreen-pointer-image">
+               </div>
+               <input type="number" placeholder="Seconds" min=1 max=60 value=10 id="homescreenInput" class="homescreen-input">
+               <div id="homescreenButtonContainer" class="homescreen-button-container">
+                    <button id="homescreenColorsWhiteButton" class="selected-button">Colors - White</button>
+                    <button id="homescreenBlackWhiteButton" class="deselected-button">Black - White</button>
+                    <button id="homescreenColorsBlackButton" class="deselected-button">Colors - Black</button>
+                    <button id="homescreenWhiteBlackButton" class="deselected-button">White - Black</button>
+               </div>
+               <div id="homescreenCheckboxContainer" class="homescreen-checkbox-container">
+                    <div id="homescreenSoundContainer" class="homescreen-sound-container">
+                         <label for="homescreenSoundCheckbox" id="homescreenSoundLabel" class="homescreen-sound-label">
+                              <input type="checkbox" id="homescreenSoundCheckbox" class="homescreen-sound-checkbox">
+                              Sound
+                         </label>
+                    </div>
+                    <div id="homescreenDragContainer" class="homescreen-drag-container">
+                         <label for="homescreenDragCheckbox" id="homescreenDragLabel" class="homescreen-drag-label">
+                              <input type="checkbox" id="homescreenDragCheckbox" class="homescreen-drag-checkbox">
+                              Drag Clicking
+                         </label>
+                    </div>
+                    <div id="homescreenFullscreenContainer" class="homescreen-fullscreen-container">
+                         <label for="homescreenFullscreenCheckbox" id="homescreenFullscreenLabel" class="homescreen-fullscreen-label">
+                              <input type="checkbox" id="homescreenFullscreenCheckbox" class="homescreen-fullscreen-checkbox">
+                              Fullscreen
+                         </label>
+                    </div>
+                </div>
+                <div id="homescreenStartContainer" class="homescreen-start-container">
+                    <p id="homescreenStartText" class="homescreen-start-text">Press Enter to Start - Press Enter to Start - Press Enter to Start - Press Enter to Start</p>
+                </div>
+          </div>
+          <div id="popupGlowContainer" class="popup-glow-container"></div>
+          <div id="popupContainer" class="popup-container">
+               <h1 id="popupTitle" class="popup-title">Time is up!</h1>
+               <div id="popupScoreContainer" class="popup-score-container">
+                    <p id="popupHitsText" class="popup-hits-text">Hits: 4</p>
+                    <p id="popupMissesText" class="popup-misses-text">Misses: 11</p>
+                    <p id="popupTotalText" class="popup-total-text">Total: 15</p>
+                    <p id="popupAccuracyText" class="popup-accuracy-text">Accuracy: 36%</p>
+                    <p id="popupCpsText" class="popup-cps-text">CPS: 1.93</p>
+               </div>
+               <button id="popupAgainButton" class="popup-again-button">Go Again</button>
+          </div>
+     </body>
+</html>
