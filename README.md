@@ -1,5 +1,7 @@
 # Click Trainer
 
+![GitHub Logo](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
+
 This is a website hosted on GitHub Pages.
 
 [Visit Click Trainer Here](https://iheartgithub1234.github.io/click-trainer/)
