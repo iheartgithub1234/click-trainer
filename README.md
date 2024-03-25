@@ -1,7 +1,5 @@
 # Click Trainer
 
-![GitHub Logo](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
-
 This is a website hosted on GitHub Pages.
 
 [Visit Click Trainer Here](https://iheartgithub1234.github.io/click-trainer/)
@@ -13,3 +11,5 @@ This website is built using HTML, CSS, and JavaScript. It is a static website. I
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+![GitHub Logo](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
