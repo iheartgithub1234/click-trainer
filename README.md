@@ -6,7 +6,7 @@ This is a website hosted on GitHub Pages.
 
 ## About
 
-This website is built using HTML, CSS, and JavaScript. It is a static website. It is a cross between an aim trainer and a CPS website, with features like different color themes, sound, drag clicking, and fullscreen. Functionality may possibly be limited across diferent devices and browsers.
+This website is built using HTML, CSS, and JavaScript. It is a static website. It is a cross between an aim trainer and a CPS website, with features like different color themes, sound, drag clicking, and fullscreen. Functionality may possibly be limited across different devices and browsers.
 
 ## License
 
